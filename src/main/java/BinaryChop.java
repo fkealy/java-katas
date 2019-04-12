@@ -19,7 +19,7 @@ public class BinaryChop {
             }
             counter ++;
         }
-        System.out.println("couldn't find it god damn it");
+        System.out.println("couldn't find it returning -1");
         return -1;
     }
 }
