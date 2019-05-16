@@ -1,5 +1,4 @@
 import java.util.Stack;
-import java.util.stream.Stream;
 
 public class ReversePolishCalculator {
 
@@ -9,20 +8,26 @@ public class ReversePolishCalculator {
 
 
     public Double calculate(String input) {
-
-        switch(input) {
-            case "+":
-                getNums();
-                numbers.push(number1 + number2);
-            default:
-                numbers.push(Double.parseDouble(input));
-        }
+        input.chars()
+                .mapToObj(i -> (char)i)
+                .forEach(n -> {
+                    System.out.println(n);
+            switch (n) {
+                case '+':
+                    getNums();
+                    numbers.push(number1 + number2);
+                case ' ':
+                    break;
+                default:
+                    numbers.push(Double.parseDouble(String.valueOf(n)));
+            }
+        });
         return numbers.pop();
     }
 
     private void getNums(){
-        Double number1 = numbers.pop();
-        Double number2 = numbers.pop();
+        number1 = numbers.pop();
+        number2 = numbers.pop();
     }
 
 }
