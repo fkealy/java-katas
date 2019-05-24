@@ -1,11 +1,9 @@
 public class BowlingGame {
 
     private int total;
-    private String rolls;
     private String[] frames;
 
     public void setRolls(String rolls) {
-        this.rolls = rolls;
         this.frames = rolls.split(" ");
     }
 
@@ -22,13 +20,12 @@ public class BowlingGame {
         for (char c : frame.toCharArray()) {
             switch (c) {
                 case 'X':
-                    if (i < 9) {
+                    if (i < 10) {
                         frameScore += 10 + getBonusScoreForStrike(frames[i + 1].toCharArray());
                         if (frames[i + 1].toCharArray()[0] == 'X') {
                             frameScore += getBonusScoreForSpare(frames[i + 2].toCharArray());
                         }
-
-                    } else {
+                    } else if (i < 10) {
                         frameScore += 10;
                     }
                     break;
