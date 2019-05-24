@@ -6,26 +6,26 @@ public class BowlingGame {
 
     public void setRolls(String rolls) {
         this.rolls = rolls;
-        this.frames =  rolls.split(" ");
+        this.frames = rolls.split(" ");
     }
 
     public int score() {
-        for(int i = 0; i < frames.length ; i++ ){
-           total += getFrameScore(frames[i],i);
+        for (int i = 0; i < frames.length; i++) {
+            total += getFrameScore(frames[i], i);
         }
         System.out.println(total);
         return total;
     }
 
     private int getFrameScore(String frame, int i) {
-        int frameScore=0;
-        for(char c: frame.toCharArray()){
-            switch(c) {
+        int frameScore = 0;
+        for (char c : frame.toCharArray()) {
+            switch (c) {
                 case 'X':
-                    if(i < 9) {
+                    if (i < 9) {
                         frameScore += 10 + getBonusScoreForStrike(frames[i + 1].toCharArray());
-                        if(frames[i+1].toCharArray()[0]== 'X'){
-                            frameScore += getBonusScoreForSpare(frames[i+2].toCharArray());
+                        if (frames[i + 1].toCharArray()[0] == 'X') {
+                            frameScore += getBonusScoreForSpare(frames[i + 2].toCharArray());
                         }
 
                     } else {
@@ -33,14 +33,14 @@ public class BowlingGame {
                     }
                     break;
                 case '/':
-                    if(i < 10) {
+                    if (i < 10) {
                         frameScore = 10 + getBonusScoreForSpare(frames[i + 1].toCharArray());
                     }
                     break;
                 case '-':
                     break;
                 default:
-                    if(i<10) {
+                    if (i < 10) {
                         frameScore += Character.getNumericValue(c);
                     }
             }
@@ -64,12 +64,15 @@ public class BowlingGame {
 
     private int getBonusScoreForStrike(char[] frame) {
         int framePreMultiplierScore = 0;
-        for(char c: frame){
-            switch(c){
+        for (char c : frame) {
+            switch (c) {
                 case 'X':
-                case '/': return 10;
-                case '-': break;
-                default: framePreMultiplierScore += Character.getNumericValue(c);
+                case '/':
+                    return 10;
+                case '-':
+                    break;
+                default:
+                    framePreMultiplierScore += Character.getNumericValue(c);
             }
         }
         return framePreMultiplierScore;
