@@ -1,6 +1,6 @@
 # java-katas
 
-This repo is a playground for my java katas. You can run it with Maven.
+A Maven project for Java katas
 
 * [Binary Chop](https://github.com/fkealy/java-katas/blob/master/src/main/java/BinaryChop.java)  
   * [Tests](https://github.com/fkealy/java-katas/blob/master/src/test/java/BinaryChopUTest.java)
