@@ -2,10 +2,10 @@
 
 This repo is a playground for my java katas. You can run it with Maven.
 
-1. [https://github.com/fkealy/java-katas/blob/master/src/main/java/BinaryChop.java] Binary Chop
-  1.[] Tests
-1. Reverse Polish Calculator
-  1. [] Tests
-1. Bowling Game
-  1. [] Tests
+* [Binary Chop](https://github.com/fkealy/java-katas/blob/master/src/main/java/BinaryChop.java)  
+  * [Tests](https://github.com/fkealy/java-katas/blob/master/src/test/java/BinaryChopUTest.java)
+* [Reverse Polish Calculator](https://github.com/fkealy/java-katas/blob/master/src/main/java/ReversePolishCalculator.java)
+  * [Tests](https://github.com/fkealy/java-katas/blob/master/src/test/java/ReversePolishCalculatorUTest.java)
+* [Bowling Game](https://github.com/fkealy/java-katas/blob/master/src/main/java/BowlingGame.java)
+  * [Tests](https://github.com/fkealy/java-katas/blob/master/src/test/java/BowlingGameUTest.java)
 
